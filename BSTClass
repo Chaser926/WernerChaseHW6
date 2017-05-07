@@ -100,3 +100,14 @@ void delete(String key)
  
         return root;
     }
+    //Finds the minValue in the BST
+    String minValue(Node root)
+    {
+        String minv = root.key;
+        while (root.left != null)
+        {
+            minv = root.left.key;
+            root = root.left;
+        }
+        return minv;
+    }
