@@ -1,2 +1,24 @@
-Insert method
-prin
+public class Node
+    {
+        String key;
+        Node left, right;
+        int counter = 1;
+         // Constructer
+        public Node(String item)
+        {
+            key = item;
+            left = right = null;
+        }
+        
+        // Method to incremate counter
+        public void counter()
+        {
+          counter++;
+        }
+        
+        // Method to reutn the value of counter
+        public int getCounter()
+        {
+          return counter;
+        }
+    }
