@@ -139,3 +139,20 @@ void delete(String key)
         //return the (unchanged) node pointer 
         return root;
     }
+//This method calls inOrder()
+    void inOrder()
+    {
+        inOrder(root);
+    }
+ 
+    //A utility function to do inorder traversal of BST
+    void inOrder(Node root)
+    {
+        if (root != null)
+        {
+            inOrder(root.left);
+            System.out.println(root.key + " " + root.getCounter());
+            inOrder(root.right);
+        }
+    }
+}
