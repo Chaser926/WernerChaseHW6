@@ -111,3 +111,31 @@ void delete(String key)
         }
         return minv;
     }
+//This method mainly calls insert()
+    void insert(String key)
+    {
+        root = insert(root, key);
+    }
+ 
+    //A recursive function to insert a new key in BST 
+    Node insert(Node root, String key)
+    {
+ 
+        //If the tree is empty, return a new node 
+        if (root == null)
+        {
+            root = new Node(key);
+            return root;
+        }
+ 
+        //Otherwise, recur down the tree 
+        if (key.compareToIgnoreCase(root.key) < 0)
+            root.left = insert(root.left, key);
+        else if (key.compareToIgnoreCase(root.key) > 0)
+            root.right = insert(root.right, key);
+        else if (key.equalsIgnoreCase(root.key))
+            root.counter();
+ 
+        //return the (unchanged) node pointer 
+        return root;
+    }
