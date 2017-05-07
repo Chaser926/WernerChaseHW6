@@ -22,3 +22,44 @@ public class Node
           return counter;
         }
     }
+Node search(String key)
+    {
+      if(search(root, key) == null)
+      {
+        JOptionPane.showMessageDialog(null, "'" +  key + "'" + " is not in the tree.");
+      }
+      
+      else
+      {
+        JOptionPane.showMessageDialog(null, "'" + key + "'" + " was found");
+      }
+      
+      return search(root, key);
+    }
+    
+    //A recursive function to search for a key in BST
+    Node search(Node r, String key)
+    {
+      //Search recursivly through the tree
+     if(r.key.compareToIgnoreCase(key) < 0 && r.right != null)
+     {
+       return search(r.right, key);
+     }
+     
+     else if(r.key.compareToIgnoreCase(key) > 0 && r.left != null)
+     {
+       return search(r.left, key);
+     }
+     
+     //Return r if r and key equal 
+     else if(r.key.equalsIgnoreCase(key))
+     {
+       return r;
+     }
+     
+     //If key isn't found then null is returned
+     else
+     {
+       return null;
+     }
+    }
