@@ -1,4 +1,9 @@
-public class Node
+import javax.swing.*;
+
+public class BSTree
+{
+    /* Class containing left and right child of current node and key value*/
+    public class Node
     {
         String key;
         Node left, right;
@@ -22,7 +27,18 @@ public class Node
           return counter;
         }
     }
-Node search(String key)
+ 
+    Node root;
+    int counter = 0;
+ 
+    //Constructor
+    BSTree()
+    {
+        root = null;
+    }
+    
+    //This method calls search with two parameters
+    Node search(String key)
     {
       if(search(root, key) == null)
       {
@@ -63,7 +79,9 @@ Node search(String key)
        return null;
      }
     }
-void delete(String key)
+ 
+    //This method mainly calls delete()
+    void delete(String key)
     {
       root = delete(root, key);
     }
@@ -100,6 +118,7 @@ void delete(String key)
  
         return root;
     }
+    
     //Finds the minValue in the BST
     String minValue(Node root)
     {
@@ -111,7 +130,8 @@ void delete(String key)
         }
         return minv;
     }
-//This method mainly calls insert()
+ 
+    //This method mainly calls insert()
     void insert(String key)
     {
         root = insert(root, key);
@@ -139,7 +159,8 @@ void delete(String key)
         //return the (unchanged) node pointer 
         return root;
     }
-//This method calls inOrder()
+ 
+    //This method calls inOrder()
     void inOrder()
     {
         inOrder(root);
